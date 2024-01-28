@@ -44,8 +44,8 @@ def save_secret(base_url, access_token, key_id, secret_name, secret):
       "key_id": key_id,
     })
   )
-
-  if (response.status_code != http.HTTPStatus.CREATED):
+  print("response.status_code: ", response.status_code)
+  if (response.status_code >= 400):
     sys.exit(response.text)
 
 
